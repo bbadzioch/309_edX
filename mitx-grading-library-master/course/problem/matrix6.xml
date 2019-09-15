@@ -1,0 +1,37 @@
+<problem display_name="Matrix Grader: Vector Problems" showanswer="always" weight="10" attempts="">
+
+<p>The matrix grader has some pre-defined constants that you can use in your problems. It is common in physics for unit vectors to be present in problems. Rather than define scalar variables <code>hatx</code>, <code>haty</code> and <code>hatz</code>, you can load vector quantities for these constants. Then, if students make vector errors in their entries, they will be informed so.</p>
+
+<p>In this problem, a rock is thrown from the origin with initial velocity \(v_x \hat{x} + v_y \hat{y}\). The acceleration due to gravity is \(-g \hat{y}\). What is the position \(\vec{r}\) of the rock as a function of time?</p>
+
+<p>Suggested inputs:</p>
+
+<ul>
+  <li><code>v_x*t*hatx + (v_y*t-g*t^2/2)*haty</code> (the correct answer)</li>
+  <li><code>v_x*t + (v_y*t-g*t^2/2)</code></li>
+  <li><code>hatx/hatz</code></li>
+  <li><code>hatx*haty</code></li>
+</ul>
+
+<script type="text/python" system_path="python_lib">
+from mitxgraders import MatrixGrader, cartesian_xyz
+grader = MatrixGrader(
+   answers='v_x*t*hatx + (v_y*t-g*t^2/2)*haty',
+   variables=['v_x', 'v_y', 'g', 't'],
+   user_constants=cartesian_xyz,
+   max_array_dim=0
+)
+</script>
+
+<p style="display:inline">\(\vec{r} = \) </p>
+<customresponse cfn="grader" expect="v_x*t*hatx + (v_y*t-g*t^2/2)*haty" inline="1">
+  <textline math="true" preprocessorClassName="MJxPrep" preprocessorSrc="/static/MJxPrep.js" size="40" inline="1" />
+</customresponse>
+
+<p>Note that in this example, we set <code>max_array_dim</code> to 0, meaning that students cannot enter vector or matrix quantities manually. If we hadn't, the grader would accept the answer <code>[v_x*t,v_y*t-g*t^2/2,0]</code>.</p>
+
+<p>In addition to <code>cartesian_xyz</code>, we also define <code>cartesian_ijk</code> for those that prefer the \(\hat{i}\), \(\hat{j}\) and \(\hat{k}\) unit vectors, as well as the Pauli matrices as <code>pauli</code>.</p>
+
+<a href="https://github.com/mitodl/mitx-grading-library/tree/master/course/problem/matrix6.xml" target="_blank">View source</a>
+
+</problem>

@@ -1,0 +1,100 @@
+What is not good
+----------------
+
+1. Open edX is running on Python 2.7, and the project to upgrade it to Python 3 has
+started only very recently. Some Python libraries are also somewhat dated. For example,
+numpy version in edX is 1.6 (the current is 1.15), which means e.g. that @ for matrix
+multiplication does not work. This is not a  big issue, I noticed that I was working with
+Python 2.7 only when I checked it.
+
+I would like to check how nbgrader works when used within edX, but I imagine that it
+uses its own virtual environment, so the kernel and Python libraries should be distinct
+from what edX uses.
+
+2. More annoying is that not all code entered in Open edX works as it should. I have
+discovered a few such issues so far:
+
+- The inequality operators <, >, <=, >= break the code, since edX recognizes them
+as parts of XML tags. I am guessing that there may be  more characters that will
+create the same problem - "&" perhaps?
+
+**Note:** one can replace in the code < with &lt;, > with &gt; etc. and it will work fine.
+
+- In order to create random values in an edX problem the function random.randrange
+works fine, but numpy random functions do not. When one uses numpy for that purpose
+edX generates one set of values when it creates a problem, and another set when it
+checks the solution, so the answer is never correct.
+
+
+- Python and Python libraries included with Open edX are dated.
+
+3. edX is not a good programming environment, but for the reasons listed above code
+written outside it must be tested and modified inside edX to make sure that it works.
+As far as code writing is concerned, it would be better to write it in some external
+editor, and upload the file to edX as a library. This is possible, but will UB give
+us administrative access to do it on our own?
+
+
+What is good
+------------
+
+1. There are several templates for problems included with edX, and it is easy to use
+them. Moreover, these capabilities can be further extended using libraries written
+by other people. For example, the MITx grading library (https://mitodl.github.io/mitx-grading-library/)
+extends the built-in edX grader in nice ways.
+
+2. You can create problems of any kind, as long as you are willing to write a custom
+code for generating and grading them. The same of course would be true for problems
+generated in Jupyter notebooks.
+
+3. Randomized problems. I am not sure how one could replicate this functionality
+in a notebook-based problems, since every student works with a copy of the same
+notebook. It is not possible to randomly generate numbers in the notebook, since
+the whole code will be run again when the notebook is graded. It would be possible
+to write code which embeds randomly generated values in the notebook metadata on
+the first run, and does not modify them afterwards, but would be a bit hackish, and
+could break in future releases of Jupyter.
+
+3. Student get a more immediate feedback. Working with nbgrader requires solving
+a problem in a notebook, uploading the notebook edX, checking the results, making
+corrections in the notebook, re-uploading etc.
+
+4. There may be fewer technical issues involved. Nbgrader will work provided that
+students do not delete or duplicate graded cells, that they assign their answers to
+appropriately named variables etc. Edx-based problems give more control over the
+answer format.
+
+5. Possibly less temptation for students to copy work from someone else. Notebook
+file with solutions can be submitted by more than one person. For edX-based problems
+each student needs to enter the solutions. Randomized problems help too.
+
+6. EdX-based problems can include hints and answers.
+
+
+
+
+Open edX programming notes
+--------------------------
+
+* I uses Python 2.7
+* Versions of some libraries (e.g. numpy or Sympy) are dated.
+* To embed the value of a Python script variable (converted to a string) into
+  the HTML code of the problem preceed the name of the variable with $.
+* In order to use external Python files zip them in one file, name the zipped
+  file python_lib.zip, and upload it to edX. Modules in the zipped file can be
+  then  imported by edX scripts
+* Scripts which are a part of edX problems cannot use some characters such as
+  "<" or "&". It seems that recognizes these characters as parts of XML tags
+  which breaks Python code. One can substitute &lt; &amp; and the code will work.
+  This most likely applies to code directly embedded in problems, not to imported
+  code.
+* Randomization of problems work as follows. edX runs the problem code twice, once
+  to generate the problem, and again to grade the answer. In order to keep problem
+  values the same both times edX provides a seed to the random module. Since seeds
+  to random function in numpy is not provided, using numpy directly to create Randomized
+  problems will fail: random values obtained in this way will change when the problem
+  is graded and in effect solution will never be recognized as correct. To fix it one
+  can generate a single random integer using the random module, and then use this
+  integer as a seed to numpy.
+* Jailed code cannot save files, so plots have to be generated and embedded into
+  HTML code  in memory. 

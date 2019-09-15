@@ -1,0 +1,89 @@
+<problem display_name="Sibling Variables" showanswer="always" weight="10" attempts="">
+
+<script type="loncapa/python">
+from mitxgraders import ListGrader, NumericalGrader
+from mitxgraders.comparers import between_comparer
+
+# The grader for the first box: a number between 4 and 6
+initial_subgrader = NumericalGrader(
+    answers={
+        'comparer': between_comparer,
+        'comparer_params': ['4', '6']
+    }
+)
+
+# The grader for the second and third boxes: apply Newton's iterations
+iteration_subgrader = NumericalGrader(
+    tolerance=1e-6,
+    user_functions={
+        # These are just for convenience when specifying the answer for these boxes
+        # Students could use them, but we will not announce their existence
+        'f' : lambda x: x**2 - 9,           # root is x = sqrt(9)
+        'df': lambda x: 2*x                 # derivative of f
+    }
+)
+
+grader = ListGrader(
+    ordered=True,
+    answers=[
+        '5', # anything between 4 and 6 accepted
+        'sibling_1 - f(sibling_1)/df(sibling_1)',
+        'sibling_2 - f(sibling_2)/df(sibling_2)',
+    ],
+    subgraders=[
+        initial_subgrader,
+        iteration_subgrader,
+        iteration_subgrader
+    ]
+)
+</script>
+
+  <p>
+    When a student submits several mathematical inputs as part of one problem, it is sometimes useful to grade these inputs in comparison to each other. This problem uses sibling variables to score subsequent answers based off of the previous one. Sibling variables are available to FormulaGraders, NumericalGraders, and MatrixGraders when used inside an <strong>ordered</strong> ListGrader.
+  </p>
+
+  <p>
+    Use Newton's Method on \(f(x)=x^2 - 9\) to calculate the square root of 9. Use anything in the interval \( (4, 6) \) as your starting value, \(x_0\). Round answers to no fewer than 6 decimal places.
+  </p>
+
+  <p>Suggested inputs:</p>
+  <ul>
+    <li><code>[5, 3.4, 3.0235294]</code> is a correct input</li>
+    <li><code>[4.5, 3.25, 3.0096154]</code> is a correct input</li>
+    <li>Try changing one or two values in the lists above.</li>
+  </ul>
+
+  <customresponse cfn="grader">
+    <table>
+      <tr>
+        <th></th>
+        <th>Value</th>
+      </tr>
+      <tr>
+        <td>\(x_0\)</td>
+        <td><textline /></td>
+      </tr>
+      <tr>
+        <td>\(x_1\)</td>
+        <td><textline /></td>
+      </tr>
+      <tr>
+        <td>\(x_2\)</td>
+        <td><textline /></td>
+      </tr>
+    </table>
+  </customresponse>
+
+  <p>We envisage that this functionality will be particularly useful in multi-part exam problems, where if students make a mistake in an early part, partial credit can be awarded for carrying that mistake forwards to subsequent parts.</p>
+
+  <h3>Resources</h3>
+  <ul>
+    <li>
+      <a href="https://github.com/mitodl/mitx-grading-library/tree/master/course/problem/formula10.xml" target="_blank">View source</a>
+    </li>
+    <li>
+      <a href="https://mitodl.github.io/mitx-grading-library/grading_math/formula_grader/#sibling-variables" target="_blank">Documentation for sibling variables</a>
+    </li>
+  </ul>
+
+</problem>

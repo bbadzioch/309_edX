@@ -1,0 +1,7 @@
+<html display_name="MatrixGrader">
+
+<p>
+  <code>MatrixGrader</code> is an extended version of FormulaGrader used to grade mathematical expressions containing scalars, vectors, and matrices. Authors and students may enter matrix (or vector) expressions by using variables sampled from matrices, or by entering a matrix entry-by-entry.
+</p>
+
+</html>

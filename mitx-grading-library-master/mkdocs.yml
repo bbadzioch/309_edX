@@ -1,0 +1,33 @@
+site_name: MITxGraders
+repo_url: 'https://github.com/mitodl/mitx-grading-library'
+edit_uri: ''
+theme:
+  name: 'cinder'
+pages:
+  - Getting Started:
+    - Overview: 'index.md'
+    - ItemGrader: 'item_grader.md'
+    - StringGrader: 'string_grader.md'
+    - edX Syntax: 'edx.md'
+  - Grading Math:
+    - FormulaGrader: 'grading_math/formula_grader.md'
+    - NumericalGrader: 'grading_math/numerical_grader.md'
+    - MatrixGrader: 'grading_math/matrix_grader/matrix_grader.md'
+    - User-Defined Matrix Functions: 'grading_math/matrixfunctions.md'
+    - Sampling Sets: 'grading_math/sampling.md'
+    - Functions and Constants List: 'grading_math/functions_and_constants.md'
+    - Comparer Functions: 'grading_math/comparer_functions.md'
+    - AsciiMath Renderer Definitions: 'grading_math/renderer.md'
+  - Grading Lists:
+    - ListGrader: 'grading_lists/list_grader.md'
+    - SingleListGrader: 'grading_lists/single_list_grader.md'
+  - Changelog: 'changelog.md'
+markdown_extensions:
+    - toc:
+        permalink: ' # '
+    - admonition
+    - codehilite
+extra_css:
+  - css/extra.css
+  - css/cinder_tweaks.css
+  - css/readthedocs.css

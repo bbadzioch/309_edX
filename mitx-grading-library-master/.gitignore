@@ -1,0 +1,11 @@
+*.pyc
+*/__pycache__
+*.pytest_cache
+*.coverage
+*.sublime-project
+*.sublime-workspace
+*.DS_Store
+course/course.tar.gz
+course/config.py
+site/
+mitxgraders-js/node_modules

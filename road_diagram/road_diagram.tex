@@ -1,0 +1,100 @@
+\documentclass[11pt, oneside]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
+\usepackage{geometry}                		% See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   		% ... or a4paper or a5paper or ... 
+%\geometry{landscape}                		% Activate for rotated page geometry
+\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}				% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
+								% TeX will automatically convert eps --> pdf in pdflatex		
+\usepackage{amssymb}
+
+%---------------------------------------------------
+% TiKZ
+%---------------------------------------------------
+\usepackage{tikz}
+\usetikzlibrary{calc,through,intersections, arrows, shapes, matrix, patterns, calligraphy, positioning}
+\usetikzlibrary{decorations.pathmorphing, decorations.markings}
+\usepackage{tikz-3dplot}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{bending}
+\usepackage{pgf, pgfplots}
+\usepgflibrary{plotmarks}
+\pgfplotsset{compat=1.13}
+\tikzset{>=latex}
+
+\newcommand{\btikz}[1][]{\begin{equation*}\begin{tikzpicture}[#1]}
+\newcommand{\etikz}{\end{tikzpicture}\end{equation*}}
+
+%---------------------------------------------------
+% Fonts
+%---------------------------------------------------
+\usepackage[math]{iwona}
+\usepackage{pifont}
+
+% This fixes the missing norm font with Iwona - use \norm{}
+\usepackage{mathtools}
+\usepackage{xparse}
+\DeclarePairedDelimiter\xnorm{\lVert}{\rVert}
+\NewDocumentCommand{\norm}{som}
+ {\IfBooleanTF{#1}
+   {\xnorm*{#3}}
+   {\IfNoValueTF{#2}
+     {\mathopen{|\mkern-.8mu|}#3\mathclose{|\mkern-.8mu|}}
+     {\xnorm[#2]{#3}}%
+   }
+ }
+
+
+
+
+\begin{document}
+\thispagestyle{empty}
+\btikz[scale= 1.2,
+	road/.style ={line width = 18 pt, black!70}, 
+	median/.style ={line width = 2.5pt, dashed, dash pattern=on 10pt off 8pt , yellow,  text=black, postaction={decorate}, decoration={
+    markings,
+    mark=at position #1 with {\arrow{angle 60}}}}
+	]
+\coordinate (A) at (0,4);
+\coordinate (B) at (5,4);
+\coordinate (C) at (0,0);
+\coordinate (D) at (5,0);
+\coordinate (E) at (2.5,2);
+\coordinate (F) at (-2,4);
+\coordinate (G) at (7,0);
+\coordinate (U) at ($1.25*(B) - 1.25*(C)$); 
+\coordinate (L) at ($-0.25*(B) + 0.25*(C)$); 
+
+\draw[rounded corners = 5mm, green, fill= green!10] (-3.5,-2) rectangle (8.5,6);
+\draw[road]  (C) rectangle (B);
+\draw[road]  (F) -- (B);
+\draw[road]  (D) -- (G);
+\draw[road] (L) -- (U);
+\draw[road] (A) -- (E);
+\draw[road] (E) -- (D);
+\draw[median={0.5}]  (C) -- node[anchor = east, xshift = -15pt]{$\bf x_{2}$} (A);
+
+\draw[median={0.5}]  (D) -- node[anchor = west, xshift = 10pt,  xshift=5pt] {\bf \color{red} 40 cars/h} (B);
+\draw[median={0.5}]  (G) -- node[anchor = base, yshift = -25pt, xshift=5pt] {\bf \color{red} 140 cars/h} (D);
+\draw[median={0.5}]  (A) -- node[anchor = south, xshift = -10pt, yshift = 10pt] {\bf \color{red} 100 cars/h}  (F);
+\draw[median={0.5}]  (D) -- node[anchor = base, yshift = -25pt] {$\bf x_{6}$} (C);
+\draw[median={0.5}]  (A) -- node[anchor = south,  yshift = 10pt] {$\bf x_{1}$} (B);
+\draw[median={0.6}]  (L) -- node[anchor = base, yshift = -25pt, sloped] {\bf \color{red} 80 cars/h} (C);
+\draw[median={0.63}]  (C) -- node[anchor = base, xshift = 15pt,   yshift = -22pt, sloped] {\bf \color{red} 50 cars/h} (E);
+\draw[median={0.63}]  (E) -- node[anchor = base, pos = 0.43, yshift = -25pt, sloped] {$\bf x_{4}$} (B);
+
+\draw[median={0.63}]  (D) -- node[anchor = base, pos=0.63, yshift = -25pt, sloped] {$\bf x_{5}$} (E);
+
+\draw[median={0.63}]  (E) -- node[anchor = base, pos=0.4,   yshift = -25pt, sloped] {$\bf x_{3}$} (A);
+
+\draw[median={0.61}]  (B) -- node[anchor = base, xshift = 15pt, yshift = -25pt, sloped] {\bf \color{red} 120 cars/h} (U);
+
+
+\draw[red, fill = white, line width = 2] (A) circle (0.4) node {\large\bf A};
+\draw[red, fill = white, line width = 2] (B) circle (0.4) node[xshift = 1pt] {\large\bf B};
+\draw[red, fill = white, line width = 2] (C) circle (0.4) node {\large\bf C};
+\draw[red, fill = white, line width = 2] (D) circle (0.4) node[xshift=1pt] {\large\bf D};
+\draw[red, fill = white, line width = 2] (E) circle (0.4) node[xshift=1pt] {\large\bf E};
+\etikz
+
+
+\end{document}  

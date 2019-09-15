@@ -1,0 +1,631 @@
+1
+00:00:00,439 --> 00:00:03,659
+Hello I'm professor Barba and I want
+
+2
+00:00:03,659 --> 00:00:06,120
+to introduce you to Jupyter. Jupyter is a
+
+3
+00:00:06,120 --> 00:00:09,719
+set of open source and free tools for
+
+4
+00:00:09,719 --> 00:00:12,719
+interactive computing, for thinking with
+
+5
+00:00:12,719 --> 00:00:15,500
+computing, and learning with computing.
+
+6
+00:00:15,500 --> 00:00:18,650
+Once you have installed Jupyter in your
+
+7
+00:00:18,650 --> 00:00:22,769
+machine, in your computer, and you have -- or
+
+8
+00:00:22,769 --> 00:00:25,590
+you have a cloud Jupyter service -- you
+
+9
+00:00:25,590 --> 00:00:27,599
+will see what is being shown in my
+
+10
+00:00:27,599 --> 00:00:31,199
+screen. This is the Jupyter dashboard, a
+
+11
+00:00:31,199 --> 00:00:33,660
+file explorer, in this case I have no
+
+12
+00:00:33,660 --> 00:00:37,200
+files, so I will create a new Jupyter,
+
+13
+00:00:37,200 --> 00:00:39,570
+Jupyter notebook. The notebook is the
+
+14
+00:00:39,570 --> 00:00:43,410
+basic format, document format of Jupyter.
+
+15
+00:00:43,410 --> 00:00:45,270
+I will click on the button that says new,
+
+16
+00:00:45,270 --> 00:00:47,910
+here on the top right, and I will have
+
+17
+00:00:47,910 --> 00:00:49,829
+perhaps some different options, you will
+
+18
+00:00:49,829 --> 00:00:51,090
+have some different options but there
+
+19
+00:00:51,090 --> 00:00:54,180
+are we will choose Python 3, and this
+
+20
+00:00:54,180 --> 00:00:57,180
+launches a new tab in my browser with an
+
+21
+00:00:57,180 --> 00:01:00,329
+empty Jupyter notebook. Here where it
+
+22
+00:01:00,329 --> 00:01:02,579
+says untitled I may choose to give it a
+
+23
+00:01:02,579 --> 00:01:05,129
+title, in this case say I want to call it
+
+24
+00:01:05,129 --> 00:01:10,580
+Jupyter demo, my first demo for you today.
+
+25
+00:01:11,180 --> 00:01:16,619
+Ok, that's my file name, and you see here
+
+26
+00:01:16,619 --> 00:01:19,950
+an inviting cell with nothing in it. The
+
+27
+00:01:19,950 --> 00:01:24,570
+cell is the chunk of content in a
+
+28
+00:01:24,570 --> 00:01:27,689
+notebook, and I can use different types
+
+29
+00:01:27,689 --> 00:01:30,630
+of content - it can be code, computer code
+
+30
+00:01:30,630 --> 00:01:34,170
+or text that can be formatted using
+
+31
+00:01:34,170 --> 00:01:37,740
+markdown. So let's choose markdown. Here I
+
+32
+00:01:37,740 --> 00:01:40,619
+have an option, a pulldown menu where I
+
+33
+00:01:40,619 --> 00:01:42,270
+can choose to change the cell into
+
+34
+00:01:42,270 --> 00:01:46,470
+markdown. Markdown is a way to format
+
+35
+00:01:46,470 --> 00:01:50,759
+text for a browser that has a few simple
+
+36
+00:01:50,759 --> 00:01:53,520
+marks to indicate for example a heading.
+
+37
+00:01:53,520 --> 00:01:55,770
+In this case I could use one hash to
+
+38
+00:01:55,770 --> 00:01:58,950
+indicate Jupyter demo as my title, I
+
+39
+00:01:58,950 --> 00:02:01,469
+could use two hashes to indicate the
+
+40
+00:02:01,469 --> 00:02:04,409
+heading that comes after that, say play
+
+41
+00:02:04,409 --> 00:02:05,939
+with strings,
+
+42
+00:02:05,939 --> 00:02:09,318
+that's our demo for today, and then
+
+43
+00:02:09,318 --> 00:02:11,879
+regular text has doesn't have any
+
+44
+00:02:11,879 --> 00:02:13,130
+markings, I could say
+
+45
+00:02:13,130 --> 00:02:17,150
+"it's fun" say, or maybe I want to use an
+
+46
+00:02:17,150 --> 00:02:19,130
+indication for italics, which is the
+
+47
+00:02:19,130 --> 00:02:21,920
+underdash, "really fun".
+
+48
+00:02:21,920 --> 00:02:24,860
+Okay, that is a little bit of text that I
+
+49
+00:02:24,860 --> 00:02:27,470
+have entered into a markdown cell, and to
+
+50
+00:02:27,470 --> 00:02:29,660
+obtain the formatted text I have to
+
+51
+00:02:29,660 --> 00:02:31,910
+Shift-Enter to execute that cell. And
+
+52
+00:02:31,910 --> 00:02:35,000
+immediately I get a new cell, that is by
+
+53
+00:02:35,000 --> 00:02:37,850
+default code. So let's write some code in
+
+54
+00:02:37,850 --> 00:02:39,860
+there. The first program that everybody
+
+55
+00:02:39,860 --> 00:02:43,550
+writes is print "hello world". in Python
+
+56
+00:02:43,550 --> 00:02:46,400
+the print function is simply print, we
+
+57
+00:02:46,400 --> 00:02:50,480
+use round brackets to mark what is going
+
+58
+00:02:50,480 --> 00:02:53,420
+to be the parameters that we give that
+
+59
+00:02:53,420 --> 00:02:55,900
+function. So the parameters in this case
+
+60
+00:02:55,900 --> 00:03:05,150
+is a single string "hello world". If I do
+
+61
+00:03:05,150 --> 00:03:08,090
+Shift-Enter, that executes the code cell,
+
+62
+00:03:08,090 --> 00:03:11,270
+and I get the output of Python's print
+
+63
+00:03:11,270 --> 00:03:13,430
+function which is in this case "hello
+
+64
+00:03:13,430 --> 00:03:17,120
+world". I could perhaps want to save this
+
+65
+00:03:17,120 --> 00:03:19,910
+string "hello world" into a variable. Let's
+
+66
+00:03:19,910 --> 00:03:23,660
+call it my_string. my_string equals - the
+
+67
+00:03:23,660 --> 00:03:26,420
+equal sign is the assignment operator in
+
+68
+00:03:26,420 --> 00:03:29,780
+Python - and I indicate a string with the
+
+69
+00:03:29,780 --> 00:03:33,650
+double quotes "hello world". And here I
+
+70
+00:03:33,650 --> 00:03:38,000
+have assigned a string to this variable.
+
+71
+00:03:38,000 --> 00:03:40,850
+So now I could, say up here print my_sting.
+
+72
+00:03:40,850 --> 00:03:44,150
+Notice that I have gone back up
+
+73
+00:03:44,150 --> 00:03:46,700
+to a cell, and I can re-execute that
+
+74
+00:03:46,700 --> 00:03:48,620
+cell and obtain its output.
+
+75
+00:03:48,620 --> 00:03:51,980
+The output is the same in this case. Let
+
+76
+00:03:51,980 --> 00:03:53,990
+me delete this cell to make more space. I
+
+77
+00:03:53,990 --> 00:03:56,720
+have my string and I want to
+
+78
+00:03:56,720 --> 00:03:59,270
+perhaps add an exclamation point. So in
+
+79
+00:03:59,270 --> 00:04:02,410
+Python I can add strings together,
+
+80
+00:04:02,410 --> 00:04:05,330
+concatenate is at the technical word, by
+
+81
+00:04:05,330 --> 00:04:07,970
+just using the plus sign. So let's
+
+82
+00:04:07,970 --> 00:04:13,360
+call that new-string equals my_string
+
+83
+00:04:13,360 --> 00:04:18,589
+plus quotes,to indicate string, and the
+
+84
+00:04:18,589 --> 00:04:21,470
+exclamation point and it's to enter, to
+
+85
+00:04:21,470 --> 00:04:23,990
+get a new piece of code in the same cell,
+
+86
+00:04:23,990 --> 00:04:27,340
+print new_string
+
+87
+00:04:27,340 --> 00:04:30,080
+and I Shift-Enter to execute and obtain
+
+88
+00:04:30,080 --> 00:04:31,850
+the result which is "Hello world" with now
+
+89
+00:04:31,850 --> 00:04:35,270
+an exclamation point. The next fun thing
+
+90
+00:04:35,270 --> 00:04:37,449
+that we can do with strings is to access
+
+91
+00:04:37,449 --> 00:04:39,740
+different characters in that string with
+
+92
+00:04:39,740 --> 00:04:41,389
+these square brackets. The square
+
+93
+00:04:41,389 --> 00:04:45,680
+brackets, with an index inside that marks
+
+94
+00:04:45,680 --> 00:04:48,520
+the position of that character. Python
+
+95
+00:04:48,520 --> 00:04:52,060
+uses indexing starting at 0, so the first
+
+96
+00:04:52,060 --> 00:04:55,430
+element of new_string would be
+
+97
+00:04:55,430 --> 00:04:59,479
+new_string square brackets 0. And if I
+
+98
+00:04:59,479 --> 00:05:01,340
+Shift-Enter to execute, I get the capital
+
+99
+00:05:01,340 --> 00:05:03,020
+letter "H" which is the first element of
+
+100
+00:05:03,020 --> 00:05:06,710
+"Hello world!". Similarly I could change
+
+101
+00:05:06,710 --> 00:05:09,229
+that to be 1 and I will get the second
+
+102
+00:05:09,229 --> 00:05:11,570
+element, that is the letter "E". And here's
+
+103
+00:05:11,570 --> 00:05:15,020
+a cool thing: you can use -1 to
+
+104
+00:05:15,020 --> 00:05:16,669
+indicate the last element of the string;
+
+105
+00:05:16,669 --> 00:05:18,919
+Shift-Enter that is the exclamation
+
+106
+00:05:18,919 --> 00:05:20,900
+point. So that's a very cool thing that
+
+107
+00:05:20,900 --> 00:05:23,539
+you can do with Python indexing into
+
+108
+00:05:23,539 --> 00:05:26,120
+strings. Another cool thing that you can
+
+109
+00:05:26,120 --> 00:05:29,240
+do is called slicing. Let me add here... so
+
+110
+00:05:29,240 --> 00:05:31,700
+here I have a empty cell. I'm gonna move
+
+111
+00:05:31,700 --> 00:05:34,160
+it up using that arrow in the top menu,
+
+112
+00:05:34,160 --> 00:05:36,289
+and I'm gonna change that cell into
+
+113
+00:05:36,289 --> 00:05:39,110
+markdown, to leave some notes to myself
+
+114
+00:05:39,110 --> 00:05:41,240
+for the future. And I'm gonna say here
+
+115
+00:05:41,240 --> 00:05:44,630
+that this is my -- I'm gonna use one
+
+116
+00:05:44,630 --> 00:05:49,039
+asterisk... two asterisks, to bold some text --
+
+117
+00:05:49,039 --> 00:05:52,639
+and I'm going to say: "Slicing strings" as
+
+118
+00:05:52,639 --> 00:05:57,470
+a little heading here. And instead of
+
+119
+00:05:57,470 --> 00:05:59,960
+using a single index now we're going to
+
+120
+00:05:59,960 --> 00:06:02,599
+use two indices. So how do we do slicing,
+
+121
+00:06:02,599 --> 00:06:09,190
+we use the name, name of the variable
+
+122
+00:06:09,190 --> 00:06:14,050
+nameOfstring -- let's call it that,
+
+123
+00:06:14,050 --> 00:06:18,770
+how about that,  equals... no so with the
+
+124
+00:06:18,770 --> 00:06:23,330
+square brackets, start colon end, that is
+
+125
+00:06:23,330 --> 00:06:26,479
+the syntax for a slice. But one thing to
+
+126
+00:06:26,479 --> 00:06:33,169
+notice here, is that the last or the end
+
+127
+00:06:33,169 --> 00:06:37,810
+index is not inclusive.
+
+128
+00:06:38,240 --> 00:06:41,790
+So these these are my notes to self for
+
+129
+00:06:41,790 --> 00:06:44,340
+the future, and I am going to use a slice
+
+130
+00:06:44,340 --> 00:06:46,620
+here. So what how could I get perhaps the
+
+131
+00:06:46,620 --> 00:06:50,580
+first word of "Hello world!" -- "hello". So "hello"
+
+132
+00:06:50,580 --> 00:06:57,740
+0 1 2 3 4 5 -- 5 would give me the first
+
+133
+00:06:57,740 --> 00:07:01,340
+letter , sorry -- the first word, "hello".
+
+134
+00:07:01,340 --> 00:07:07,110
+Maybe I want to get the last word.
+
+135
+00:07:07,110 --> 00:07:13,160
+new_string, that would be from 0, oh how about
+
+136
+00:07:13,160 --> 00:07:16,980
+so 6,  how about we find what the last
+
+137
+00:07:16,980 --> 00:07:19,050
+element is here. Oh we already know
+
+138
+00:07:19,050 --> 00:07:21,420
+how to do that it's -1. so what is
+
+139
+00:07:21,420 --> 00:07:26,730
+that -- "world". And this is just an
+
+140
+00:07:26,730 --> 00:07:29,580
+introduction to slicing and some cool
+
+141
+00:07:29,580 --> 00:07:31,230
+things that you can do with strings on
+
+142
+00:07:31,230 --> 00:07:34,250
+Jupyter. If you want to learn more about
+
+143
+00:07:34,250 --> 00:07:36,570
+playing with strings on Jupyter
+
+144
+00:07:36,570 --> 00:07:39,180
+notebooks we have a full lesson that is
+
+145
+00:07:39,180 --> 00:07:42,360
+called play with data in Jupyter, you can
+
+146
+00:07:42,360 --> 00:07:45,870
+find it on github, and it explains in
+
+147
+00:07:45,870 --> 00:07:50,220
+detail how to work with Jupyter, how
+
+148
+00:07:50,220 --> 00:07:53,340
+to open a new one, how to in this case
+
+149
+00:07:53,340 --> 00:07:55,650
+even launch the Jupyter application, how
+
+150
+00:07:55,650 --> 00:07:59,490
+to use different types of content in a
+
+151
+00:07:59,490 --> 00:08:02,640
+markdown cell, and then the different
+
+152
+00:08:02,640 --> 00:08:05,550
+operations that you can do with strings
+
+153
+00:08:05,550 --> 00:08:07,710
+right down here at the bottom. This is a
+
+154
+00:08:07,710 --> 00:08:09,690
+full lesson that you can read at your
+
+155
+00:08:09,690 --> 00:08:12,470
+own pace and follow along in your
+
+156
+00:08:12,470 --> 00:08:15,150
+Jupyter installation or in a cloud
+
+157
+00:08:15,150 --> 00:08:17,820
+Jupyter service. That's our first demo I
+
+158
+00:08:17,820 --> 00:00:00,000
+hope you'll be back for more.
