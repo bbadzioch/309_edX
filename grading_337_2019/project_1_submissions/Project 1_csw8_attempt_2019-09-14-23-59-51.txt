@@ -1,0 +1,15 @@
+Name: Connor Wilson (csw8)
+Assignment: Project 1
+Date Submitted: Saturday, September 14, 2019 11:59:51 PM EDT
+Current Grade: Needs Grading
+
+Submission Field:
+There is no student submission text data for this assignment.
+
+Comments:
+There are no student comments for this assignment.
+
+Files:
+	Original filename: Project 1.ipynb
+	Filename: Project 1_csw8_attempt_2019-09-14-23-59-51_Project 1.ipynb
+

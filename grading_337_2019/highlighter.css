@@ -1,0 +1,15 @@
+.mark {
+    background-color: yellow;
+}
+
+.burk {
+    font-family: monospace;
+    color: red;
+    white-space: pre;
+    font-style: normal;
+}
+
+.girk {
+    color: red;
+    font-style: italic;
+}
