@@ -314,10 +314,10 @@ class WebPages:
             generated network will be strongly connected, i.e. it will be
             possible to get from any vertex to any other vertex along directed
             edges.
-        
-        TO DO: 
-           - to adhere with the common terminology the "incidence matrix" should 
-             be transposed and should be called the adjacency matrix. 
+
+        TO DO:
+           - to adhere with the common terminology the "incidence matrix" should
+             be transposed and should be called the adjacency matrix.
         """
 
         self.N = N
@@ -492,7 +492,7 @@ class WebPages:
 
 
 
-def check_span(A, B, tol=None):
+def check_span(A, B, tol=10**(-8)):
 
     '''
     Checks if the span of columns of a matrix B is the same
@@ -538,7 +538,7 @@ def check_span(A, B, tol=None):
         return False
 
 
-def check_lin_indep(A, tol=None):
+def check_lin_indep(A, tol=10**(-8)):
 
     '''
     Checks if columns of a matrix A are linearly independent
@@ -564,7 +564,7 @@ def check_lin_indep(A, tol=None):
     return c_A == np.linalg.matrix_rank(A, tol=tol)
 
 
-def check_basis(A, B, tol=None):
+def check_basis(A, B, tol=10**(-8)):
 
     '''
     Checks if columns of a matrix B form a basis of the column space

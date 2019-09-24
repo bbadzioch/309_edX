@@ -1,0 +1,25 @@
+<!-- THIS IS MY HAND-WRITTEN XML DOCUMENT CONFORMING TO A SCHEMA -->
+
+<mycourses
+        xmlns="http://blue.math.buffalo.edu/463/mycourses"
+        version="0.1" >
+
+        <course>
+                <number>MTH 448</number>
+                <name>Data-Oriented Computing</name>
+                <semester>201909</semester>
+        </course>
+
+        <course>
+                <number>MTH448</number>
+                <name>Data-Oriented Computing</name>
+                <semester>201809</semester>
+        </course>
+
+        <course>
+                <number>MTH 649</number>
+                <name>Partial Differential Equations</name>
+                <semester>200809</semester>
+        </course>
+
+</mycourses>
