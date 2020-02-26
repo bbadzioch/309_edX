@@ -39,7 +39,7 @@ def plot2img(fig, dpi=200):
 
     tmp = BytesIO()
     fig.savefig(tmp, format="png", dpi=dpi)
-    enc = base64.b64encode(tmp.getvalue())
+    enc = base64.b64encode(tmp.getvalue()).decode("utf-8")
     tmp.close()
     return enc
 
