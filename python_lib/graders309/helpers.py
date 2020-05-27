@@ -70,7 +70,7 @@ def scrub_string(s, glob_dir={}, loc_dir={}, clear=False):
         glob_dir["__builtins__"] = allowed_builtins
         glob_dir.update(math_dir)
 
-    # disable double underscores since can be used to get object attributes
+    # disable double underscores since it can be used to get object attributes
     if "__" in s:
         raise FormatError("Invalid input")
 
