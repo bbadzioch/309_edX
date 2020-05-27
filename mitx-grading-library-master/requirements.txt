@@ -33,7 +33,7 @@ pyparsing==2.0.7
 pytest==3.6.2
 pytest-cov==2.5.1
 PyYAML==3.13
-requests==2.19.1
+requests==2.20.0
 scipy==0.14.0
 singledispatch==3.4.0.3
 six==1.11.0
