@@ -79,7 +79,7 @@ Open edX programming notes
 * I uses Python 2.7
 * Versions of some libraries (e.g. numpy or Sympy) are dated.
 * To embed the value of a Python script variable (converted to a string) into
-  the HTML code of the problem preceed the name of the variable with $.
+  the HTML code of the problem proceed the name of the variable with $.
 * In order to use external Python files zip them in one file, name the zipped
   file python_lib.zip, and upload it to edX. Modules in the zipped file can be
   then  imported by edX scripts

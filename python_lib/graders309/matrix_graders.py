@@ -1,4 +1,3 @@
-from __future__ import division
 from math import *
 import sympy
 import numpy as np
