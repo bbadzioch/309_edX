@@ -38,6 +38,6 @@ scipy==1.11.1
 singledispatch==3.4.0.3
 six==1.11.0
 stdlib-list==0.4.0
-tornado==6.4.2
+tornado==6.5.1
 urllib3==1.26.5
 wrapt==1.10.11
