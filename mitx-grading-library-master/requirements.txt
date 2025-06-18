@@ -39,5 +39,5 @@ singledispatch==3.4.0.3
 six==1.11.0
 stdlib-list==0.4.0
 tornado==6.5.1
-urllib3==1.26.5
+urllib3==2.5.0
 wrapt==1.10.11
